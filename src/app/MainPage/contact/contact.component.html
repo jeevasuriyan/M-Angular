@@ -1,0 +1,26 @@
+
+<div>
+    <app-nav-bar></app-nav-bar>
+</div>
+<div class="container text-center" [ngClass]="formStatus">
+    
+    <form class="form position-absolute top-50 start-50 translate-middle bg " [formGroup]="reactiveForm">
+        <h1>Query</h1>
+        <div class="form-group">
+            <input type="text"  placeholder="First Name" [(ngModel)]="fname" formControlName="fname">
+        </div>
+        <div class="form-group">
+            <input type="text"  placeholder="Last Name" [(ngModel)]="lname" formControlName="lname" >
+        </div>
+        <div class="form-group">
+            <input type="text"  placeholder="Mobile number" [(ngModel)]="mobile" formControlName="mobile">
+        </div>
+        <div class="form-group">
+            <!-- <textarea placeholder="Enter your comments here..." type="text" [(ngModel)]="text1"  style="width: 190px;"></textarea> -->
+            <input type="text" placeholder="Enter the Query here.." [(ngModel)]="text1"  formControlName="text1">
+        </div>
+        <div class="form-group">
+            <button class="btn btn-warning" (click)="query()">Submit</button>
+        </div>
+    </form>
+</div>

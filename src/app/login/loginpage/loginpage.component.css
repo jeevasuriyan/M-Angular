@@ -1,0 +1,15 @@
+.form-group{
+    padding: 10px;
+
+    width: 300px;
+}
+.bg{
+    background-color: lightskyblue;
+}
+
+
+input.ng-invalid.ng-touched{
+    border: red 1px solid;
+}
+
+

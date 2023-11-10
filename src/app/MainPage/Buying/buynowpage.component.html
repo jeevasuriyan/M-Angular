@@ -1,0 +1,19 @@
+<app-nav-bar></app-nav-bar>
+<div class="card text-center bg-light">
+    <div class="card-body">
+        <img src="{{Item.image}}" width="400" height="489" class="rounded m-2">
+        <h5 class="card-title"><span>Name : </span>{{Item.name}}</h5>
+        <h5 class="card-title"><span>Color: </span>{{Item.color}}</h5>
+        <p class="card-text"><span>Availabilty: </span> {{Item.available}}</p>
+        <p class="card-text"><span>Price: </span> {{Item.price}}</p>
+        <p class="card-text"><span>RAM: </span> {{Item.ram}}</p>
+        <p class="card-text"><span>ROM: </span> {{Item.rom}}</p>
+        
+    </div>
+    <div>
+        <button class="btn btn-success position-absolute bottom-0 end-0" (click)="OrderSuccess(Item)">Place Order</button>
+        <button class="btn btn-dark position-absolute bottom-0 start-0 " (click)="back()">Back</button>
+    </div>
+    
+    
+</div>

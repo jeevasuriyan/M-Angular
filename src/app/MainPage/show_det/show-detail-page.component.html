@@ -1,0 +1,15 @@
+<div class="card mb-3">
+    <img src="{{product.image}}" class="card-img" height="576">
+    <div class="card-body text-center">
+        <h5 class="card-title"><span></span>{{product.name}}</h5>
+        <p class="card-text">Color: {{product.color}}</p>
+        <p class="card-text">RAM: {{product.ram}}</p>
+        <p class="card-text">ROM: {{product.rom}}</p>
+        <p class="card-text">Availabilty: {{product.available}}</p>
+        <p class="card-text">Price: {{product.price}}</p>
+    </div>
+    <div>
+        <button class="btn btn-success position-absolute bottom-0 end-0" (click)="addtocart(product)">ADD TO CART</button>
+        <button class="btn btn-secondary position-absolute bottom-0 start-0" (click)="back()">Back</button>
+    </div>
+</div>

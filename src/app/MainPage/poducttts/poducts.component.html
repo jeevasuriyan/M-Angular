@@ -1,0 +1,43 @@
+<app-nav-bar></app-nav-bar>
+<app-display></app-display>
+<br>
+<div>
+    <h3 class="text-center text-secondary">Products</h3>
+</div>
+
+<hr class="border border-black border-1 opacity-50 m-4">
+
+<!-- search bar -->
+<div class="d-flex" role="search">
+    <input [(ngModel)]="search" (keyup)="searchProducts()"
+        class="border border-secondary opacity-50 form-control m-5 p-2" type="search"
+        placeholder="Search Your Products Here..." aria-label="Search">
+</div>
+
+<!-- this is for loading and not while fethcing   -->
+<h1 class="m-5" *ngIf="filterdProducts.length < 1"> No Such Product Available.. </h1>
+
+<div class="d-flex justify-content-around row m-2">
+    <div class="card text-center m-2" style="width: 18rem;" *ngFor="let pro of filterdProducts">
+        <div>
+            <img [src]="pro.image" class="card-img-top mt-2 rounded" height="250px">
+            <div class="card-body">
+                <h2 class="card-title text-center fs-6 fw-bold"><span>{{pro.name}}</span></h2>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">Color : <span>{{pro.color}}</span></li>
+                <li class="list-group-item">Price: <span>{{pro.price}}</span></li>
+                <li class="list-group-item">Available: <span>{{pro.available}}</span></li>
+                
+            </ul>
+            <div class="card-body">
+                <a class="btn btn-success card-link" *ngIf="pro.available==='Available'; else notifyme">
+                    <span routerLink="/buynow/{{pro.id}}">Buy now</span></a>
+                <ng-template #notifyme>
+                    <div class="btn btn-danger m-2" (click)="Notifyalert()">Notify Me</div>
+                </ng-template>
+                <a routerLink="/showdet/{{pro.id}}" class="card-link btn btn-warning">Show Detaile</a>
+            </div>
+        </div>
+    </div>
+</div>

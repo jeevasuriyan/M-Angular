@@ -1,0 +1,33 @@
+
+<app-nav-bar ></app-nav-bar>
+<h3 class="fs-1 text-center text-decoration-underline m-3">Your Orders</h3>
+<h1 class="text-center mt-5" *ngIf="myOrders.length<1">Your Order Page is Empty....</h1>
+<div class="d-flex">
+    <div>
+        <div class="card mb-3 m-4" style="max-width: 600px;" *ngFor="let order of myOrders">
+            <div class="row g-0">
+                <div class="col-md-4 p-2 mt-4">
+                    <img [src]="order.image" class="img-fluid rounded-start p-2 rounded" style="height: 150px; width: 220px;">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">Name: {{order.name}}</h5>
+                        <p class="card-text">Color:{{order.color}}</p>
+                        <p class="card-text">Price:{{order.price}}</p>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="delete(order)">Cancell Order</button>
+                        <button type="button" class="btn btn-primary mx-1" routerLink="/track/{{order._id}}">Track Item</button>
+                    </div>  
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="img-fluid float-end">
+        <img src="/assets/shop1.jpg" class="rounded m-4 border border-black shadow" style="max-width: 650px;" >
+    </div> -->
+</div>
+
+<div>
+    <button class="btn btn-dark position-absolute bottom-0 start-0" (click)="back()">Back</button>
+</div>
+
+

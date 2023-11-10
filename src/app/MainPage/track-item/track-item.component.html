@@ -1,0 +1,14 @@
+<!-- <p>track-item works!</p> -->
+<div class="card text-center">
+    <div class="card-body">
+        <p class="fs-1 text-decoration-underline">Tracker</p>
+        <img src={{product.image}} width="300" height="252" class="rounded m-2">
+        <h5 class="card-title">Name: {{product.name}}</h5>
+        <p class="card-text">Color: {{product.color}}</p>
+    </div>
+    <div class="progress" style="height: 30px; margin: 60px;">
+        <div class="progress-bar" role="progressbar" [style.width.%]="product.progress"  aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">{{product.progress}}%</div>
+    </div>
+    <br>
+    <div class="card-footer text-muted ">Your Delevary will be..</div>
+</div>

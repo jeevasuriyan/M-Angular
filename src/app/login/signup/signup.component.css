@@ -1,0 +1,12 @@
+.bg{
+    background-color: whitesmoke;
+    width: 300px;
+    height: 350px;
+}
+.form-group{
+    padding: 10px;
+}
+
+input.ng-invalid.ng-touched{
+    border: red 1px solid;
+}
